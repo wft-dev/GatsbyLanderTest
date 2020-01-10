@@ -4,7 +4,6 @@ phases:
     runtime-versions:
       nodejs: 10
     commands:
-      - 'yarn --ignore-engines'
       - 'touch .npmignore'
       - 'npm install -g gatsby'
 pre_build:
@@ -15,11 +14,11 @@ build:
     - 'npm run-script clean && build'
 post_build:
   commands:
-    - 'npm run-script deploy'
+    - 'aws s3 sync "public/" "s3://testing-gatsbyjs" --delete --acl "public-read"'
 artifacts:
   base-directory: public
   files:
-    - build*/**
+    - '**/*' 
 discard-paths: yes
 cache:
   paths:
