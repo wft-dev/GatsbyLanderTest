@@ -45,6 +45,7 @@ phases:
       - mv build-output/* ./
       - rm -R build-output
 artifacts:
+  base-directory: public
   files:
     - '**/*'
   discard-paths: yes
