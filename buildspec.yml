@@ -19,8 +19,8 @@ post_build:
 artifacts:
   base-directory: public
   files:
-    - '**/*'
-discard-paths: no
+    - build*/**
+discard-paths: yes
 cache:
   paths:
     - '.cache/*'
