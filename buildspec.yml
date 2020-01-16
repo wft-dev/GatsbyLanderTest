@@ -11,6 +11,7 @@ phases:
         - 'npm install'
     build:
       commands:
+        - aws s3 rm s3://testing-gatsbyjs --recursive
         - 'npm run build'
     post_build:
       commands:
@@ -18,8 +19,7 @@ phases:
     artifacts:
       base-directory: public
       files:
-        - index.html
-      discard-paths: yes
+        - '**/*'
 
 # version: 0.2
 
