@@ -18,7 +18,7 @@ phases:
     artifacts:
       base-directory: public
       files:
-        - '**/*'
+        - index.html
       discard-paths: yes
 
 # version: 0.2
